@@ -1,0 +1,31 @@
+
+<mat-card>
+<mat-card-header>
+        <mat-card-title>Flop</mat-card-title>
+        </mat-card-header>
+        <div>{{ hand.board.flop[0][0] + suiteLookup[hand.board.flop[0][1]] + "  " + hand.board.flop[1][0] + suiteLookup[hand.board.flop[1][1]] + " " + hand.board.flop[2][0] + suiteLookup[hand.board.flop[2][1]]}}</div>
+     </mat-card>   
+    <mat-card>
+      <mat-card-header>
+      <mat-card-title>Turn</mat-card-title>
+    </mat-card-header>
+      <div>{{ hand.board.turn[0] + suiteLookup[hand.board.turn[1]]}}</div>
+      </mat-card>
+    <mat-card>
+        <mat-card-title>River</mat-card-title>
+        <div>{{ hand.board.river[0] + suiteLookup[hand.board.river[1]] }}</div>
+        </mat-card>
+  <span *ngFor="let p of hand.players">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ p.player.name }}</mat-card-title>
+      </mat-card-header>
+      <div allign=center>{{
+        p.hand[0][0] +
+          suiteLookup[p.hand[0][1]] +
+          "  " +
+          p.hand[1][0] +
+          suiteLookup[p.hand[1][1]]
+      }}</div>
+    </mat-card>
+  </span>
